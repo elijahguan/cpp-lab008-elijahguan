@@ -20,23 +20,23 @@ void BinarySearchTree::deleteSubtree(TreeNode* node) {
 }
 
 bool BinarySearchTree::insert(int value) {
-    (void)value;
-    throw std::logic_error("Student implementation required: insert");
+    root_ = insertRecursive(root_, value);
+    ++size_;
+    return true;
 }
 
 bool BinarySearchTree::remove(int value) {
-    (void)value;
-    throw std::logic_error("Student implementation required: remove");
+    root_ = removeRecursive(root_, value);
+    --size_;
+    return true;
 }
 
 bool BinarySearchTree::search(int value) const {
-    (void)value;
-    throw std::logic_error("Student implementation required: search");
+    return searchRecursive(root_, value);
 }
 
 bool BinarySearchTree::contains(int value) const {
-    (void)value;
-    throw std::logic_error("Student implementation required: contains");
+    return searchRecursive(root_, value);
 }
 
 bool BinarySearchTree::empty() const noexcept {
